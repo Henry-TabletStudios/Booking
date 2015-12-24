@@ -10,11 +10,11 @@ http://alpha.trybooking.net/Booking/PrintItem.aspx?bid=64b6b358-d879-43b8-a5e2-d
 
 
 Required
-Fully responsive design
-Bar code scannable on all devices
-Tickets in order (for multiple tickets) with terms at conditions at the end
-A layout for  for most mobile devices (320 w x 480 h) http://mydevice.io/devices/ 
-A seperate printable version (without print, save and social media buttons.
+*Fully responsive design
+*Bar code scannable on all devices
+*Tickets in order (for multiple tickets) with terms at conditions at the end
+*A layout for  for most mobile devices (320 w x 480 h) http://mydevice.io/devices/ 
+#A seperate printable version (without print, save and social media buttons.
 
 
 Fields Required
@@ -23,8 +23,8 @@ All on current layout below are required plus a section for event organiser term
 
 
 Features
-Require “Powered by TryBooking” on ticket
-Functional Save to PDF button
+*Require “Powered by TryBooking” on ticket
+#Functional Save to PDF button
 Require following buttons
-          Share on Facebook, Twitter, Linkedin and Google plus
-          Require function add to calendar button  (https://addtocalendar.com/) based on event date and time
+          #Share on Facebook, Twitter, Linkedin and Google plus
+          *Require function add to calendar button  (https://addtocalendar.com/) based on event date and time
