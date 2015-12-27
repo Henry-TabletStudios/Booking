@@ -1,6 +1,28 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
 </head>
+
+<body>
+    <script type="text/javascript">
+        (function () {
+            if (window.addtocalendar)
+                if (typeof window.addtocalendar.start == "function") return;
+            if (window.ifaddtocalendar == undefined) {
+                window.ifaddtocalendar = 1;
+                var d = document,
+                    s = d.createElement('script'),
+                    g = 'getElementsByTagName';
+                s.type = 'text/javascript';
+                s.charset = 'UTF-8';
+                s.async = true;
+                s.src = ('https:' == window.location.protocol ? 'https' : 'http') + '://addtocalendar.com/atc/1.5/atc.min.js';
+                var h = d[g]('body')[0];
+                h.appendChild(s);
+            }
+        })();
+    </script>
+</body>
 
 <div class="table-responsive">
     <table style="width: 6.5in; height: 2.75in; border-width: 1px; border-style: solid;" bordercolor="black" cellpadding="0" cellspacing="0" class="table table-striped">
@@ -23,29 +45,6 @@
                 </th>
             </tr>
         </thead>
-
-        <tfoot>
-            <tr>
-                <td>
-                    <!--  Footer table begin -->
-                    <table width="100%" cellspacing="0" cellpadding="0" align="left">
-                        <tbody>
-                            <tr>
-                                <td>SECTION: [SECTION]</td>
-                                <td><span id="doornamespan">DOOR: [DOORNAME]</span>
-                                </td>
-                                <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
-                                </td>
-
-                                <td align="right">[TICKETTYPE] - [PRICE]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!--  Footer table end -->
-
-                </td>
-            </tr>
-        </tfoot>
         <tbody>
             <tr>
 
@@ -90,5 +89,45 @@
                 </td>
             </tr>
         </tbody>
+        <tfoot>
+            <tr>
+                <td>
+                    <!--  Footer table begin -->
+                    <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                        <tbody>
+                            <tr>
+                                <td>SECTION: [SECTION]</td>
+                                <td><span id="doornamespan">DOOR: [DOORNAME]</span>
+                                </td>
+                                <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
+                                </td>
+
+                                <td align="right">[TICKETTYPE] - [PRICE]</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!--  Footer table end -->
+                </td>
+
+            </tr>
+
+        </tfoot>
+
     </table>
+
+
+    <p style="margin-left:10px;">Powered by TryBooking</p>
 </div>
+
+<span class="addtocalendar atc-style-blue" style="margin-left:10px;">
+    <var class="atc_event">
+        <var class="atc_date_start"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss)--></var>
+        <var class="atc_date_end"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss), not supplied--></var>
+        <var class="atc_timezone"><!--not supplied--></var>
+        <var class="atc_title">[EVENT_NAME]</var>
+        <var class="atc_description"></var>
+        <var class="atc_location">[VENUE]</var>
+        <var class="atc_organizer">[BOOKEDBY]</var>
+        <var class="atc_organizer_email"></var>
+    </var>
+</span>
