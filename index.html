@@ -1,9 +1,53 @@
+<!DOCTYPE>
+
+<html>
+
 <head>
+	<meta http-equiv="Content-Type" content = "text/html"; charset="UTF-8" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+	<script type="text/javascript" src ="jspdf.min.js"></script>
+	<script type = "text/javascript" src ="html2canvas.js"></script>
+	<script type ="text/javascript">
+	
+	function generatePDF() {
+		html2canvas(document.body, {
+		
+		onrendered: function (canvas) {
+		
+		
+		var img = canvas.toDataURL("image/png");
+		var doc = new jsPDF();
+		doc.addImage(img, 'JPEG', 20,20);
+		doc.save('Tickets.pdf');
+		}
+		
+		});
+	}
+	
+	</script>
 </head>
 
 <body>
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '572460099572876',
+      xfbml      : true,
+      version    : 'v2.5'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<a href = "javascript:generatePDF()">Download PDF</a>
     <script type="text/javascript">
         (function () {
             if (window.addtocalendar)
@@ -22,6 +66,15 @@
             }
         })();
     </script>
+	
+<div>
+  <class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+
 </body>
 
 <div class="table-responsive">
@@ -107,10 +160,6 @@
                         </tbody>
                     </table>
                     <!--  Footer table end -->
-                    <br>
-                    <br>
-                    <br>
-                    <p style="font-size:11px;">Powered by TryBooking</p>
                 </td>
 
             </tr>
@@ -120,7 +169,7 @@
     </table>
 
 
-    
+    <p style="margin-left:10px;">Powered by TryBooking</p>
 </div>
 
 <span class="addtocalendar atc-style-blue" style="margin-left:10px;">
@@ -135,16 +184,7 @@
         <var class="atc_organizer_email"></var>
     </var>
 </span>
-<br>
-<br>
-<p style="font-size:10px; margin-left:10px;">
-Event Organizer Terms and Conditions
-For information about this event, please contact the "Event Organiser". //button here
-<br>
-<br>
-TryBooking Terms and Conditions
-TryBooking is your economical online system for community groups and organisations that has been designed to look after the entire event ticketing and registration needs.
-<br>
-<br>
-All issues relating to the sale of tickets and the hosting of their associated event(s) are the responsibility of the “Event Organiser” and not that of Bookwana Pty. Ltd (Austalian Business Number 71126987915) Trading As TryBooking, its subsidiaries, affiliates, officers, agents, other partners and employees known herein as “TryBooking”. 1. TryBooking is not responsible for the Terms and Conditions or any other instructions or directives imposed by the Event Organiser. 2. TryBooking is not liable for any loss or damage arising form the purchase of this ticket. 3. TryBooking cannot exchange or refund this ticket. 4. The additional booking fee that may apply when purchasing tickets via the TryBooking website is not negotiable or refundable and can be subject to change at TryBooking’s sole discretion. 5. A cancelled, postponed or altered event does not constitute an obligation by TryBooking to substitute, refund or provide other compensation monetary or otherwise. 6. Any dispute which may arise regarding the booking of this event or the way in which this event is conducted or the conditions in which this event is held is solely between the ticket holder and the Event Organiser and not a part of TryBooking’s responsibilities.
-</p>
+
+</div>
+</div>
+</html>
