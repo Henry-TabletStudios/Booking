@@ -87,9 +87,9 @@
         </div>
 
         <div id="PDF" style="display:inline-block;">
-            <button type="button" class="btn btn-primary" style="background-color:rgb(66,129,244);" ><a style="color:white;" href="javascript:generatePDF()">Download PDF</a></button>
+            <button type="button" class="btn btn-primary" style="background-color:rgb(66,129,244);"><a style="color:white;" href="javascript:generatePDF()">Download PDF</a></button>
         </div>
-        <div id="calender" style="display:inline-block;" >
+        <div id="calender" style="display:inline-block;">
             <span class="addtocalendar atc-style-blue">
                 <var class="atc_event">
                     <var class="atc_date_start"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss)--></var>
@@ -201,6 +201,7 @@
                             <!--  Footer table begin -->
                             <table width="100%" cellspacing="0" cellpadding="0" align="left">
                                 <tbody>
+                                    
                                     <tr>
                                         <td>SECTION: [SECTION]</td>
                                         <td><span id="doornamespan">DOOR: [DOORNAME]</span>
@@ -208,17 +209,19 @@
                                         <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
                                         </td>
 
-                                        <td align="right">[TICKETTYPE] - [PRICE]</td>
+                                        <td align="right">[TICKETTYPE] - [PRICE]</td>           
                                     </tr>
+                                </tbody>
+                            </table>
+                            <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                                <tbody>
+                                    <p style="margin-top:50px;">Powered by TryBooking</p>
                                 </tbody>
                             </table>
                             <!--  Footer table end -->
                         </td>
-
                     </tr>
-
                 </tfoot>
-
             </table>
         </div>
 
