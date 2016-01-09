@@ -1,107 +1,110 @@
 <!DOCTYPE>
 <html>
-    <head>
-        <style>
-#PDF {
-display: block;
-margin: 0 auto;
-position:absolute;
-left:70%;
 
-}
-#calender{
-display: block;
-margin: 0 auto;
-position:absolute;
-left:80%;
-}
-#print{
-display: block;
-margin: 0 auto;
-position:absolute;
-left:60%;
-}
-        </style>
+<head>
+    <style>
 
-<meta http-equiv="Content-Type" content = "text/html"; charset="UTF-8" />
+    </style>
 
-<!--Jquery -->
-<script src="jquery-1.11.3.min.js"> </script>
+    <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8" />
 
-<!-- Bootstrap -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha3841q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!--Jquery -->
+    <script src="jquery-1.11.3.min.js">
+    </script>
 
-<!-- Calendar -->
-<link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
-    
-<!-- Save to PDF includes -->
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha3841q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
-<script src ="jspdf.min.js"></script>
-<script src = "jquery.js"></scr
-<script src = "pdfconversion.js"></script>
+    <!-- Calendar -->
+    <link href="http://addtocalendar.com/atc/1.5/atc-style-blue.css" rel="stylesheet" type="text/css">
+
+    <!-- Save to PDF includes -->
+
+    <script src="jspdf.min.js"></script>
+    <script src="jquery.js">
+        < /scr < script src = "pdfconversion.js" >
+    </script>
 
 
-	
-<script>
-	function printContent(el){
-	var restorepage = document.body.innerHTML;
-	var printcontent = document.getElementById(el).innerHTML;
-	document.body.innerHTML = printcontent;
-	window.print();
-	document.body.innerHTML = restorepage;
-}
-</script>
 
-    </head>
+    <script>
+        function printContent(el) {
+            var restorepage = document.body.innerHTML;
+            var printcontent = document.getElementById(el).innerHTML;
+            document.body.innerHTML = printcontent;
+            window.print();
+            document.body.innerHTML = restorepage;
+        }
+    </script>
+
+</head>
 
 
 <body>
-<a href="//pdfcrowd.com/url_to_pdf/">Save to PDF</a>
+    <!-- Linkedin Share -->
+    <script src="//platform.linkedin.com/in.js" type="text/javascript">
+        lang: en_US
+    </script>
 
+    <!-- Google Share -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
 
-<a href = "javascript:pdfToHTML()">Save It</a>
-<!-- Linkedin Share -->
-<script src="//platform.linkedin.com/in.js" type="text/javascript"> lang: en_US</script>
+    <!-- Facebook Share -->
+    <div id="fb-root"></div>
 
-<!-- Google Share -->
-<script src="https://apis.google.com/js/platform.js" async defer></script>
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=572460099572876";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
 
-<!-- Facebook Share -->
- <div id="fb-root"></div>
+    <!-- Twitter Share -->
+    <script>
+        ! function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0],
+                p = /^http:/.test(d.location) ? 'http' : 'https';
+            if (!d.getElementById(id)) {
+                js = d.createElement(s);
+                js.id = id;
+                js.src = p + '://platform.twitter.com/widgets.js';
+                fjs.parentNode.insertBefore(js, fjs);
+            }
+        }(document, 'script', 'twitter-wjs');
+    </script>
 
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) return;
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=572460099572876";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
-</script>
+    <!-- Calendar -->
+    <br>
 
-<!-- Twitter Share -->
-<script>
-!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-</script>
+    <div class="pull-right" style="width:100%; text-align:right; margin-right:10px;">
+        <div id="Print" style="display:inline-block;">
+            <button type="button" class="btn btn-primary" style="background-color:rgb(66,129,244); margin-bottom: 2px;" onclick="printContent('table-ticket')">Print Content</button>
+        </div>
 
-<!-- Calendar -->
-<br>
-
-<div id = "calender">
-   <span class="addtocalendar atc-style-blue" style="margin-left:10px;">
-        <var class="atc_event">
-        <var class="atc_date_start"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss)--></var>
-        <var class="atc_date_end"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss), not supplied--></var>
-        <var class="atc_timezone"><!--not supplied--></var>
-        <var class="atc_title">[EVENT_NAME]</var>
-        <var class="atc_description"></var>
-        <var class="atc_location">[VENUE]</var>
-        <var class="atc_organizer">[BOOKEDBY]</var>
-        <var class="atc_organizer_email"></var>
-        </var>
-    </span>
-</div>
-
-   <script type="text/javascript">
+        <div id="PDF" style="display:inline-block;">
+            <button type="button" class="btn btn-primary" style="background-color:rgb(66,129,244); margin-bottom: 2px;"><a style="color:white;" href="//pdfcrowd.com/url_to_pdf/">Download PDF</a></button>
+        </div>
+        <div id="calender" style="display:inline-block;">
+            <span class="addtocalendar atc-style-blue">
+                <var class="atc_event">
+                    <var class="atc_date_start"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss)--></var>
+                    <var class="atc_date_end"><!--not formatted properly (YYYY-MM-DD hh24:mm:ss), not supplied--></var>
+                    <var class="atc_timezone"><!--not supplied--></var>
+                    <var class="atc_title">[EVENT_NAME]</var>
+                    <var class="atc_description"></var>
+                    <var class="atc_location">[VENUE]</var>
+                    <var class="atc_organizer">[BOOKEDBY]</var>
+                    <var class="atc_organizer_email"></var>
+                </var>
+            </span>
+        </div>
+    </div>
+    
+    <script type="text/javascript">
         (function () {
             if (window.addtocalendar)
                 if (typeof window.addtocalendar.start == "function") return;
@@ -120,120 +123,110 @@ left:60%;
         })();
     </script>
 
-<!--Save as PDF Button-->
-
-<div id ="PDF">
-</div>
-
-<!--Print Button -->
-<div id = "Print">
-<button onclick="printContent('table-ticket')">Print Content</button>
-</div>
-    
 </body>
 <!--Begin Ticket -->
 
 <center>
 
-<div id = "table-ticket">
-<br>
-    <br>
+    <div id="table-ticket">
         <br>
-        
-<!-- Table Start !-->
-<div class="table-responsive">
-    <table style="width: 6.5in; height: 2.75in; border-width: 1px; border-style: solid;" bordercolor="black" cellpadding="0" cellspacing="0" class="table table-striped">
-        <thead>
-            <tr>
-                <th>
-                    <!--  Header table begin -->
-                    <table width="100%" cellspacing="0" cellpadding="0" align="left" style="margin-top: 5px">
-                        <tbody>
-                            <tr>
-                                <td align="left">
-                                    <span style="font : bold 35px arial;">TICKET</span>
+        <br>
+        <br>
 
-                                </td>
-                                <td align="right">[BARCODE]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!--  Header table end -->
-                </th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
+        <!-- Table Start !-->
+        <div class="table-responsive">
+            <table style="width: 6.5in; height: 2.75in; border-width: 1px; border-style: solid;" bordercolor="black" cellpadding="0" cellspacing="0" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>
+                            <!--  Header table begin -->
+                            <table width="100%" cellspacing="0" cellpadding="0" align="left" style="margin-top: 5px">
+                                <tbody>
+                                    <tr>
+                                        <td align="left">
+                                            <span style="font : bold 35px arial;">TICKET</span>
 
-                <td style="height: 180px">
-                    <!--  Body table begin -->
-                    <table width="100%" cellspacing="0" cellpadding="0" align="left">
-                        <tbody>
-                            <tr>
-                                <td rowspan="6" style="width : 20px;"></td>
-                                <td>EVENT:</td>
-                                <td><strong>[EVENT_NAME]</strong>
-                                </td>
-                                <td rowspan="6" style="width : 20px;"></td>
+                                        </td>
+                                        <td align="right">[BARCODE]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--  Header table end -->
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
 
-                            </tr>
-                            <tr>
-                                <td>VENUE:</td>
-                                <td>[VENUE]</td>
-                            </tr>
-                            <tr>
-                                <td>DATE:</td>
+                        <td style="height: 180px">
+                            <!--  Body table begin -->
+                            <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                                <tbody>
+                                    <tr>
+                                        <td rowspan="6" style="width : 20px;"></td>
+                                        <td>EVENT:</td>
+                                        <td><strong>[EVENT_NAME]</strong>
+                                        </td>
+                                        <td rowspan="6" style="width : 20px;"></td>
 
-                                <td>[DATE]</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td></td>
-                            </tr>
-                            <tr>
+                                    </tr>
+                                    <tr>
+                                        <td>VENUE:</td>
+                                        <td>[VENUE]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>DATE:</td>
 
-                                <td>Booked by:</td>
-                                <td>[BOOKEDBY]</td>
-                            </tr>
-                            <tr>
-                                <td>Booking ID:</td>
-                                <td>[BOOKID]</td>
-                            </tr>
+                                        <td>[DATE]</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
 
-                        </tbody>
-                    </table>
-                    <!--  Body table end -->
-                </td>
-            </tr>
-        </tbody>
-        <tfoot>
-            <tr>
-                <td>
-                    <!--  Footer table begin -->
-                    <table width="100%" cellspacing="0" cellpadding="0" align="left">
-                        <tbody>
-                            <tr>
-                                <td>SECTION: [SECTION]</td>
-                                <td><span id="doornamespan">DOOR: [DOORNAME]</span>
-                                </td>
-                                <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
-                                </td>
+                                        <td>Booked by:</td>
+                                        <td>[BOOKEDBY]</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Booking ID:</td>
+                                        <td>[BOOKID]</td>
+                                    </tr>
 
-                                <td align="right">[TICKETTYPE] - [PRICE]</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <!--  Footer table end -->
-                </td>
+                                </tbody>
+                            </table>
+                            <!--  Body table end -->
+                        </td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td>
+                            <!--  Footer table begin -->
+                            <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                                <tbody>
+                                    <tr>
+                                        <td>SECTION: [SECTION]</td>
+                                        <td><span id="doornamespan">DOOR: [DOORNAME]</span>
+                                        </td>
+                                        <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
+                                        </td>
 
-            </tr>
+                                        <td align="right">[TICKETTYPE] - [PRICE]</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <!--  Footer table end -->
+                        </td>
 
-        </tfoot>
+                    </tr>
 
-    </table>
-</div>
+                </tfoot>
 
-</div>
+            </table>
+        </div>
+
+    </div>
 </center>
 <!-- Calender -->
 
@@ -242,10 +235,10 @@ left:60%;
 <br>
 <br>
 <!--Indent Buttons -->
-&nbsp;	&nbsp;	
+&nbsp; &nbsp;
 
 <!--Social Media Share Buttons Begin -->
-<a href="https://twitter.com/share" class="twitter-share-button"{count} data-url="http://alpha.trybooking.net/DXG" data-text="Book now!" data-via="Trybooking" data-hashtags="Trybooking">Tweet</a>
+<a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://alpha.trybooking.net/DXG" data-text="Book now!" data-via="Trybooking" data-hashtags="Trybooking">Tweet</a>
 
 <div class="fb-share-button" data-href="http://www.trybooking.com/default.html" data-layout="button"></div>
 
@@ -254,22 +247,20 @@ left:60%;
 <div class="g-plus" data-action="share" data-annotation="none" data-href="http://www.trybooking.com/default.html"></div>
 
 <br>
-    <br>
-        <br>
-            <br>
+<br>
+<br>
+<br>
 
 <!--Begin Terms -->
- <p style="font-size:10px; margin-left:10px;">
- <h5>Event Organizer Terms and Conditions</h5>
+<p style="font-size:10px; margin-left:10px;">
+    <h5>Event Organizer Terms and Conditions</h5>
 
 
- <p>For information about this event, please contact the <a href ="#">Event Organiser</a></p>
+    <p>For information about this event, please contact the <a href="#">Event Organiser</a></p>
 
- <br>
-<h5>TryBooking Terms and Conditions</h5>
- TryBooking is your economical online system for community groups and organisations that has been designed to look after the entire event ticketing and registration needs.
- <br>
-All issues relating to the sale of tickets and the hosting of their associated event(s) are the responsibility of the “Event Organiser” and not that of Bookwana Pty. Ltd (Austalian Business Number 71126987915) Trading As TryBooking, its subsidiaries, affiliates, officers, agents, other partners and employees known herein as “TryBooking”. 1. TryBooking is not responsible for the Terms and Conditions or any other instructions or directives imposed by the Event Organiser. 2. TryBooking is not liable for any loss or damage arising form the purchase of this ticket. 3. TryBooking cannot exchange or refund this ticket. 4. The additional booking fee that may apply when purchasing tickets via the TryBooking website is not negotiable or refundable and can be subject to change at TryBooking’s sole discretion. 5. A cancelled, postponed or altered event does not constitute an obligation by TryBooking to substitute, refund or provide other compensation monetary or otherwise. 6. Any dispute which may arise regarding the booking of this event or the way in which this event is conducted or the conditions in which this event is held is solely between the ticket holder and the Event Organiser and not a part of TryBooking’s responsibilities.
+    <br>
+    <h5>TryBooking Terms and Conditions</h5> TryBooking is your economical online system for community groups and organisations that has been designed to look after the entire event ticketing and registration needs.
+    <br> All issues relating to the sale of tickets and the hosting of their associated event(s) are the responsibility of the “Event Organiser” and not that of Bookwana Pty. Ltd (Austalian Business Number 71126987915) Trading As TryBooking, its subsidiaries, affiliates, officers, agents, other partners and employees known herein as “TryBooking”. 1. TryBooking is not responsible for the Terms and Conditions or any other instructions or directives imposed by the Event Organiser. 2. TryBooking is not liable for any loss or damage arising form the purchase of this ticket. 3. TryBooking cannot exchange or refund this ticket. 4. The additional booking fee that may apply when purchasing tickets via the TryBooking website is not negotiable or refundable and can be subject to change at TryBooking’s sole discretion. 5. A cancelled, postponed or altered event does not constitute an obligation by TryBooking to substitute, refund or provide other compensation monetary or otherwise. 6. Any dispute which may arise regarding the booking of this event or the way in which this event is conducted or the conditions in which this event is held is solely between the ticket holder and the Event Organiser and not a part of TryBooking’s responsibilities.
 
 
 </html>
