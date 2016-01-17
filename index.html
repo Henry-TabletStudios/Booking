@@ -2,8 +2,8 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <style>
-
     </style>
 
     <meta http-equiv="Content-Type" content="text/html" ; charset="UTF-8" />
@@ -21,13 +21,10 @@
     <!-- Save to PDF includes -->
 
     <script src="jspdf.min.js"></script>
-    <script src="jquery.js">
-        < /scr < script src = "pdfconversion.js" >
-    </script>
-
-
+    <script src="jquery.js"></script>
 
     <script>
+        
         function printContent(el) {
             var restorepage = document.body.innerHTML;
             var printcontent = document.getElementById(el).innerHTML;
@@ -41,6 +38,7 @@
 
 
 <body>
+    
     <!-- Linkedin Share -->
     <script src="//platform.linkedin.com/in.js" type="text/javascript">
         lang: en_US
@@ -103,8 +101,9 @@
             </span>
         </div>
     </div>
-    
+
     <script type="text/javascript">
+        
         (function () {
             if (window.addtocalendar)
                 if (typeof window.addtocalendar.start == "function") return;
@@ -122,145 +121,148 @@
             }
         })();
     </script>
+    <!--Begin Ticket -->
 
-</body>
-<!--Begin Ticket -->
+    <center>
 
-<center>
+        <div id="table-ticket">
+            <br>
+            <br>
+            <br>
 
-    <div id="table-ticket">
-        <br>
-        <br>
-        <br>
+            <!-- Table Start !-->
+            <div class="table-responsive">
+                <table style="max-width: 6.5in; max-height: 2.75in; border-width: 1px; border-style: solid;" bordercolor="black" cellpadding="0" cellspacing="0" class="table">
+                    <thead>
+                        <tr>
+                            <th>
+                                <!--  Header table begin -->
+                                <table width="100%" cellspacing="0" cellpadding="0" align="left" style="margin-top: 5px">
+                                    <tbody>
+                                        <tr>
+                                            <td align="left">
+                                                <span style="font : bold 35px arial;">TICKET</span>
 
-        <!-- Table Start !-->
-        <div class="table-responsive">
-            <table style="width: 6.5in; height: 2.75in; border-width: 1px; border-style: solid;" bordercolor="black" cellpadding="0" cellspacing="0" class="table table-striped">
-                <thead>
-                    <tr>
-                        <th>
-                            <!--  Header table begin -->
-                            <table width="100%" cellspacing="0" cellpadding="0" align="left" style="margin-top: 5px">
-                                <tbody>
-                                    <tr>
-                                        <td align="left">
-                                            <span style="font : bold 35px arial;">TICKET</span>
+                                            </td>
+                                            <td align="right">[BARCODE]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--  Header table end -->
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
 
-                                        </td>
-                                        <td align="right">[BARCODE]</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!--  Header table end -->
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
+                            <td style="height: 180px">
+                                <!--  Body table begin -->
+                                <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                                    <tbody>
+                                        <tr>
+                                            <td rowspan="6" style="width : 20px;"></td>
+                                            <td>EVENT:</td>
+                                            <td><strong>[EVENT_NAME]</strong>
+                                            </td>
+                                            <td rowspan="6" style="width : 20px;"></td>
 
-                        <td style="height: 180px">
-                            <!--  Body table begin -->
-                            <table width="100%" cellspacing="0" cellpadding="0" align="left">
-                                <tbody>
-                                    <tr>
-                                        <td rowspan="6" style="width : 20px;"></td>
-                                        <td>EVENT:</td>
-                                        <td><strong>[EVENT_NAME]</strong>
-                                        </td>
-                                        <td rowspan="6" style="width : 20px;"></td>
+                                        </tr>
+                                        <tr>
+                                            <td>VENUE:</td>
+                                            <td>[VENUE]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DATE:</td>
 
-                                    </tr>
-                                    <tr>
-                                        <td>VENUE:</td>
-                                        <td>[VENUE]</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DATE:</td>
+                                            <td>[DATE]</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                        <tr>
 
-                                        <td>[DATE]</td>
-                                    </tr>
-                                    <tr>
-                                        <td></td>
-                                        <td></td>
-                                    </tr>
-                                    <tr>
+                                            <td>Booked by:</td>
+                                            <td>[BOOKEDBY]</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Booking ID:</td>
+                                            <td>[BOOKID]</td>
+                                        </tr>
 
-                                        <td>Booked by:</td>
-                                        <td>[BOOKEDBY]</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Booking ID:</td>
-                                        <td>[BOOKID]</td>
-                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!--  Body table end -->
+                            </td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td>
+                                <!--  Footer table begin -->
+                                <table width="100%" cellspacing="0" cellpadding="0" align="left">
+                                    <tbody>
+                                        <tr>
+                                            <td>SECTION: [SECTION]</td>
+                                            <td><span id="doornamespan">DOOR: [DOORNAME]</span>
+                                            </td>
+                                            <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
+                                            </td>
 
-                                </tbody>
-                            </table>
-                            <!--  Body table end -->
-                        </td>
-                    </tr>
-                </tbody>
-                <tfoot>
-                    <tr>
-                        <td>
-                            <!--  Footer table begin -->
-                            <table width="100%" cellspacing="0" cellpadding="0" align="left">
-                                <tbody>
-                                    <tr>
-                                        <td>SECTION: [SECTION]</td>
-                                        <td><span id="doornamespan">DOOR: [DOORNAME]</span>
-                                        </td>
-                                        <td><span id="seatnospan">SEAT: [ROWNAME][SEATNO]</span>
-                                        </td>
+                                            <td align="right">[TICKETTYPE] - [PRICE]</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <!--  Footer table end -->
+                            </td>
 
-                                        <td align="right">[TICKETTYPE] - [PRICE]</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                            <!--  Footer table end -->
-                        </td>
+                        </tr>
 
-                    </tr>
+                    </tfoot>
 
-                </tfoot>
+                </table>
+            </div>
 
-            </table>
         </div>
+    </center>
+    <!-- Calender -->
 
     </div>
-</center>
-<!-- Calender -->
+    </div>
+    <br>
+    <br>
+    <!--Indent Buttons -->
+    &nbsp; &nbsp;
 
-</div>
-</div>
-<br>
-<br>
-<!--Indent Buttons -->
-&nbsp; &nbsp;
+    <!--Social Media Share Buttons Begin -->
+    <a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://alpha.trybooking.net/DXG" data-text="Book now!" data-via="Trybooking" data-hashtags="Trybooking">Tweet</a>
 
-<!--Social Media Share Buttons Begin -->
-<a href="https://twitter.com/share" class="twitter-share-button" {count} data-url="http://alpha.trybooking.net/DXG" data-text="Book now!" data-via="Trybooking" data-hashtags="Trybooking">Tweet</a>
+    <div class="fb-share-button" data-href="http://www.trybooking.com/default.html" data-layout="button"></div>
 
-<div class="fb-share-button" data-href="http://www.trybooking.com/default.html" data-layout="button"></div>
+    <script type="IN/Share" data-url="http://www.trybooking.com/default.html"></script>
 
-<script type="IN/Share" data-url="http://www.trybooking.com/default.html"></script>
-
-<div class="g-plus" data-action="share" data-annotation="none" data-href="http://www.trybooking.com/default.html"></div>
-
-<br>
-<br>
-<br>
-<br>
-
-<!--Begin Terms -->
-<p style="font-size:10px; margin-left:10px;">
-    <h5>Event Organizer Terms and Conditions</h5>
-
-
-    <p>For information about this event, please contact the <a href="#">Event Organiser</a></p>
+    <div class="g-plus" data-action="share" data-annotation="none" data-href="http://www.trybooking.com/default.html"></div>
 
     <br>
-    <h5>TryBooking Terms and Conditions</h5> TryBooking is your economical online system for community groups and organisations that has been designed to look after the entire event ticketing and registration needs.
-    <br> All issues relating to the sale of tickets and the hosting of their associated event(s) are the responsibility of the “Event Organiser” and not that of Bookwana Pty. Ltd (Austalian Business Number 71126987915) Trading As TryBooking, its subsidiaries, affiliates, officers, agents, other partners and employees known herein as “TryBooking”. 1. TryBooking is not responsible for the Terms and Conditions or any other instructions or directives imposed by the Event Organiser. 2. TryBooking is not liable for any loss or damage arising form the purchase of this ticket. 3. TryBooking cannot exchange or refund this ticket. 4. The additional booking fee that may apply when purchasing tickets via the TryBooking website is not negotiable or refundable and can be subject to change at TryBooking’s sole discretion. 5. A cancelled, postponed or altered event does not constitute an obligation by TryBooking to substitute, refund or provide other compensation monetary or otherwise. 6. Any dispute which may arise regarding the booking of this event or the way in which this event is conducted or the conditions in which this event is held is solely between the ticket holder and the Event Organiser and not a part of TryBooking’s responsibilities.
+    <br>
+    <br>
+    <br>
+
+    <!--Begin Terms -->
+    <p style="font-size:10px; margin-left:10px;">
+        <h5>Event Organizer Terms and Conditions</h5>
+
+
+        <p>For information about this event, please contact the <a href="#">Event Organiser</a></p>
+
+        <br>
+        <h5>TryBooking Terms and Conditions</h5> TryBooking is your economical online system for community groups and organisations that has been designed to look after the entire event ticketing and registration needs.
+        <br> All issues relating to the sale of tickets and the hosting of their associated event(s) are the responsibility of the “Event Organiser” and not that of Bookwana Pty. Ltd (Austalian Business Number 71126987915) Trading As TryBooking, its subsidiaries, affiliates, officers, agents, other partners and employees known herein as “TryBooking”. 1. TryBooking is not responsible for the Terms and Conditions or any other instructions or directives imposed by the Event Organiser. 2. TryBooking is not liable for any loss or damage arising form the purchase of this ticket. 3. TryBooking cannot exchange or refund this ticket. 4. The additional booking fee that may apply when purchasing tickets via the TryBooking website is not negotiable or refundable and can be subject to change at TryBooking’s sole discretion. 5. A cancelled, postponed or altered event does not constitute an obligation by TryBooking to substitute, refund or provide other compensation monetary or otherwise. 6. Any dispute which may arise regarding the booking of this event or the way in which this event is conducted or the conditions in which this event is held is solely between the ticket holder and the Event Organiser and not a part of TryBooking’s responsibilities.
+
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+</body>
 
 
 </html>
